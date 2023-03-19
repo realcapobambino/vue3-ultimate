@@ -10,20 +10,27 @@
 </head>
 
 <body>
-
     <h1>Hello Vue JS</h1>
-
     <div id="app">
+        <!-- V-IF Coompletly removes the whole div from the DOM -->
+        <div v-if="showCounter">
+            <hr>
+            <h1>{{ count }}</h1>
+            <button @click="count++">Increase</button>
+            <button @click="count--">Decrease</button>
+            <hr>
 
-        <h1>{{ count }}</h1>
+        </div>
+        <button @click="toggleShowDiv">
+            <span v-if="showCounter">Hide Counter</span>
+            <!-- <span v-if="!showCounter">Show Counter</span> -->
+            <span v-else>Show Counter</span>
+        </button>
 
-        <button @click="count++">Increase</button>
-        <button @click="count--">Decrease</button>
+        <!-- V-SHOW unlike V-IF applies the CSS class display: none -->
+        <div v-show="showCounter">Currently Showing Counter</div>
 
     </div>
-
-
-
     <script src="app.js"></script>
 </body>
 
