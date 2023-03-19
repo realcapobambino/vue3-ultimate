@@ -5,7 +5,7 @@ const app = Vue.createApp(
     {
         data() {
             return {
-                showCounter: true,
+                showCounter: false,
                 count: 0,
             }
 
