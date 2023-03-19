@@ -2,10 +2,16 @@
 
 
 const app = Vue.createApp(
+    {
+        data() {
+            return {
+                count: 0,
+            }
 
-    count = 0,
-    function countM() {
-        count++
+        },
+        methods: {
+
+        }
     }
 )
 

@@ -15,7 +15,10 @@
 
     <div id="app">
 
-        <button onclick="countM()">Count is {{ count }}</button>
+        <h1>{{ count }}</h1>
+
+        <button @click="count++">Increase</button>
+        <button @click="count--">Decrease</button>
 
     </div>
 
