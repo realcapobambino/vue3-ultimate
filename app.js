@@ -5,14 +5,15 @@ const app = Vue.createApp(
     {
         data() {
             return {
+                url: 'http://www.charleswahome.me',
                 showCounter: false,
                 count: 0,
                 x: 0,
                 y: 0,
                 people: [
-                    { name: 'Max', age: 30, color: 'red' },
-                    { name: 'Manu', age: 29, color: 'blue' },
-                    { name: 'Julie', age: 28, color: 'green' }
+                    { name: 'Max', age: 30, color: 'red', img: 'assets/img/1.jpg' },
+                    { name: 'Manu', age: 29, color: 'blue', img: 'assets/img/2.jpg' },
+                    { name: 'Julie', age: 28, color: 'green', img: 'assets/img/3.jpg' }
                 ]
             }
 

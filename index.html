@@ -18,16 +18,31 @@
             margin: 20px;
             display: inline-block;
         }
+
+        .images {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
     </style>
 </head>
 
 <body>
     <h1>Hello Vue JS</h1>
     <div id="app">
-        <div style="margin: 20px">
-            <ul v-for="person in people">
-                <li>{{ person.name }} - {{ person.age }}</li>
+        <!-- Attribute Binding -->
+        <a :href="url">Portfolio</a>
 
+
+        <!-- V-FOR -->
+        <div style="margin: 20px">
+            <ul>
+                <li v-for="person in people">
+                    <img class="images" :src="person.img" :alt="person.name">
+                    <h3>{{ person.name }}</h3>
+                    <p>age: {{ person.age }}</p>
+                    <p>color: {{ person.color }}</p>
+                </li>
             </ul>
 
         </div>
