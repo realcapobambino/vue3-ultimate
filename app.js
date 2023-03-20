@@ -1,6 +1,4 @@
 // console.log('Hello World');
-
-
 const app = Vue.createApp(
     {
         data() {
@@ -11,12 +9,12 @@ const app = Vue.createApp(
                 x: 0,
                 y: 0,
                 people: [
-                    { name: 'Max', age: 30, color: 'red', img: 'assets/img/1.jpg', isFav: true },
-                    { name: 'Manu', age: 29, color: 'blue', img: 'assets/img/2.jpg', isFav: false },
-                    { name: 'Julie', age: 28, color: 'green', img: 'assets/img/3.jpg', isFav: true }
+                    { name: 'Julie', age: 20, color: 'red', img: 'assets/img/1.jpg', isFav: true },
+                    { name: 'Karl', age: 26, color: 'blue', img: 'assets/img/2.jpg', isFav: false },
+                    { name: 'Zayne', age: 24, color: 'green', img: 'assets/img/3.jpg', isFav: true },
+                    { name: 'Ann', age: 25, color: 'green', img: 'assets/img/3.jpg', isFav: false }
                 ]
             }
-
         },
         methods: {
             toggleShowDiv() {
@@ -31,13 +29,17 @@ const app = Vue.createApp(
                     console.log(data)
                 }
             },
-            handleMousemove(event) {
-                this.x = event.offsetX;
-                this.y = event.offsetY;
-            },
-
-
-        }
+            // On index2.html
+            // handleMousemove(event) {
+            //     this.x = event.offsetX;
+            //     this.y = event.offsetY;
+            // },
+        },
+        computed: {
+            filteredPeople() {
+                return this.people.filter((person) => person.isFav)
+            }
+        },
     }
 )
 
