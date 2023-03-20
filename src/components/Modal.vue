@@ -1,6 +1,7 @@
 <template>
     <div class="backdrop">
         <div class="modal">
+            <h1>The Title</h1>
             <p>content right here</p>
         </div>
     </div>
@@ -21,5 +22,15 @@
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
+}
+
+.modal h1 {
+    color: blue;
+    border: none;
+    padding: 0;
+}
+
+.modal p {
+    font-style: normal;
 }
 </style>
