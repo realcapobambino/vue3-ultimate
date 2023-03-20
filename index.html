@@ -57,7 +57,7 @@
         <!-- V-FOR -->
         <div style="margin: 20px">
             <ul>
-                <li v-for="person in people" :class="{ fav: person.isFav }">
+                <li @click="toggleFav(person)" v-for="person in people" :class="{ fav: person.isFav }">
                     <img class="images" :src="person.img" :alt="person.name">
                     <h3>{{ person.name }}</h3>
                     <p>age: {{ person.age }}</p>

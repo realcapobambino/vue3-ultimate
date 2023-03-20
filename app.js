@@ -22,6 +22,9 @@ const app = Vue.createApp(
             toggleShowDiv() {
                 this.showCounter = !this.showCounter;
             },
+            toggleFav(person) {
+                person.isFav = !person.isFav;
+            },
             handleEvent(event, data) {
                 console.log(event, event.type)
                 if (data) {
@@ -31,7 +34,9 @@ const app = Vue.createApp(
             handleMousemove(event) {
                 this.x = event.offsetX;
                 this.y = event.offsetY;
-            }
+            },
+
+
         }
     }
 )
