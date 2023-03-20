@@ -1,14 +1,24 @@
 <template>
   <h1> {{ title }} </h1>
+  <div>
+    <input type="text" ref="inputfield">
+    <button @click="handleClick">Click Me!</button>
+  </div>
 </template>
 
 <script>
-
 export default {
   name: 'App',
   data() {
     return {
       title: 'VueJs Ultimate Web App ;)'
+    }
+  },
+  methods: {
+    handleClick() {
+      console.log(this.$refs.inputfield)
+      this.$refs.inputfield.classList.add('active')
+      this.$refs.inputfield.focus()
     }
   }
 }
