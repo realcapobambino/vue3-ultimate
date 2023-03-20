@@ -4,11 +4,19 @@
     <input type="text" ref="inputfield">
     <button @click="handleClick">Click Me!</button>
   </div>
+  <Modal />
 </template>
 
 <script>
+
+import Modal from './components/Modal.vue'
+
+
 export default {
   name: 'App',
+  components: {
+    Modal
+  },
   data() {
     return {
       title: 'VueJs Ultimate Web App ;)'
