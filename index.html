@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,6 +24,13 @@
 <body>
     <h1>Hello Vue JS</h1>
     <div id="app">
+        <div style="margin: 20px">
+            <ul v-for="person in people">
+                <li>{{ person.name }} - {{ person.age }}</li>
+
+            </ul>
+
+        </div>
         <hr>
         <!-- V-IF Coompletly removes the whole div from the DOM -->
         <div v-if="showCounter">
@@ -40,10 +48,10 @@
         <hr>
 
         <!-- mouse events -->
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+        <div class="box" @mouseover="handleEvent($event, 5)">mouseover (Enter)</div>
+        <div class="box" @mouseleave="handleEvent">mouseleave</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box" @mousemove="handleMousemove"> Position - {{ x }} - {{ y }} </div>
 
     </div>
     <script src="app.js"></script>
