@@ -1,5 +1,6 @@
 <template>
-    <div class="backdrop" @click="closeModal">
+    <!-- .self modifies the click event. click works only on modal and not the elements inside it -->
+    <div class="backdrop" @click.self="closeModal">
         <div class="modal" :class="{ sale: theme === 'sale' }">
             <h1>{{ text }}</h1>
             <p>{{ header }}</p>
