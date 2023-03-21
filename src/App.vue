@@ -4,7 +4,7 @@
     <input type="text" ref="inputfield">
     <button @click="handleClick">Click Me!</button>
   </div>
-  <Modal />
+  <Modal :header="header" :text="text" theme="sale" />
 </template>
 
 <script>
@@ -19,7 +19,10 @@ export default {
   },
   data() {
     return {
-      title: 'VueJs Ultimate Web App ;)'
+      title: 'VueJs Ultimate Web App ;)',
+      header: 'Sign Up for the Promo',
+      text: 'Up to 50% Off!!'
+
     }
   },
   methods: {
