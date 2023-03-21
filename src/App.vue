@@ -4,7 +4,11 @@
     <input type="text" ref="inputfield">
     <button @click="handleClick">Click Me!</button>
   </div>
-  <Modal :header="header" :text="text" theme="sale" />
+  <div v-if="showModal">
+    <Modal :header="header" :text="text" theme="sale" @close="toggleModal" />
+  </div>
+  <p>Custom Event Emmiter 👇🏾 </p>
+  <button @click="toggleModal">Show Modal</button>
 </template>
 
 <script>
@@ -21,8 +25,8 @@ export default {
     return {
       title: 'VueJs Ultimate Web App ;)',
       header: 'Sign Up for the Promo',
-      text: 'Up to 50% Off!!'
-
+      text: 'Up to 50% Off!!',
+      showModal: false,
     }
   },
   methods: {
@@ -30,6 +34,9 @@ export default {
       console.log(this.$refs.inputfield)
       this.$refs.inputfield.classList.add('active')
       this.$refs.inputfield.focus()
+    },
+    toggleModal() {
+      this.showModal = !this.showModal
     }
   }
 }
