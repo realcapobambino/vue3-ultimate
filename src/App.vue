@@ -22,7 +22,8 @@
   <div>
     <h2>Challenge</h2>
     <p>Another Modal</p>
-    <div v-if="showModalTwo">
+    <!-- another div changed to teleport -->
+    <teleport v-if="showModalTwo">
       <Modal @close="toggleModalTwo">
         <template v-slot:another>
           <a href="">Sign Up</a>
@@ -31,7 +32,7 @@
         <h2>Sign Up Now</h2>
         <p>For updates and promo codes</p>
       </Modal>
-    </div>
+    </teleport>
     <button @click="toggleModalTwo">Show Modal Two</button>
   </div>
 </template>
