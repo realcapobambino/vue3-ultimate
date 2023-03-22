@@ -23,7 +23,7 @@
     <h2>Challenge</h2>
     <p>Another Modal</p>
     <!-- another div changed to teleport -->
-    <teleport v-if="showModalTwo">
+    <teleport to="#modals" v-if="showModalTwo">
       <Modal @close="toggleModalTwo">
         <template v-slot:another>
           <a href="">Sign Up</a>
