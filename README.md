@@ -15,5 +15,5 @@ npm run serve
 # to build for production:
 
 ```
-npm run
+npm run build
 ```
