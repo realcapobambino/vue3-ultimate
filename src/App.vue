@@ -5,7 +5,17 @@
     <button @click="handleClick">Click Me!</button>
   </div>
   <div v-if="showModal">
-    <Modal :header="header" :text="text" theme="sale" @close="toggleModal" />
+    <Modal theme="sale" @close="toggleModal">
+
+      <template v-slot:links>
+        <a href="">sign up</a>
+        <a href="">more info</a>
+      </template>
+      <h1>Ultimate Giveaway</h1>
+      <p>Up to 50% OFF!!</p>
+
+
+    </Modal>
   </div>
   <p>Custom Event Emmiter 👇🏾 </p>
   <button @click="toggleModal">Show Modal</button>
