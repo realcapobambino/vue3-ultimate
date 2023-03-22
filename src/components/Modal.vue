@@ -4,11 +4,14 @@
         <div class="modal" :class="{ sale: theme === 'sale' }">
             <!-- 'default content is a fallback if there is no content ' -->
             <slot>
-
                 default content
             </slot>
             <div class="actions">
                 <slot name="links"></slot>
+            </div>
+            <!-- second modal -->
+            <div class="actions">
+                <slot name="another"></slot>
             </div>
         </div>
     </div>
@@ -23,7 +26,6 @@ export default {
         }
     }
 }
-
 </script>
 
 <style>
