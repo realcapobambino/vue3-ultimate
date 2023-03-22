@@ -4,7 +4,9 @@
     <input type="text" ref="inputfield">
     <button @click="handleClick">Click Me!</button>
   </div>
-  <div v-if="showModal">
+
+  <!-- teleport this modal to the div below vue app div -->
+  <teleport to=".modals" v-if="showModal">
     <Modal theme="sale" @close="toggleModal">
       <template v-slot:links>
         <a href="">sign up</a>
@@ -13,7 +15,7 @@
       <h1>Ultimate Giveaway</h1>
       <p>Up to 50% OFF!!</p>
     </Modal>
-  </div>
+  </teleport>
   <p>Custom Event Emmiter 👇🏾 </p>
   <button @click="toggleModal">Show Modal</button>
   <!--  -->
@@ -65,7 +67,8 @@ export default {
 </script>
 
 <style>
-#app {
+#app,
+.modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
