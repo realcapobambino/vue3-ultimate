@@ -57,7 +57,7 @@ export default {
 
 .modal .actions {
     text-align: center;
-    margin: 30px 0 10 px 0;
+    margin: 30px 10 px;
 
 }
 

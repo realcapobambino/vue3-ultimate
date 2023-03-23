@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     handleClick() {
-      console.log(this.$refs.inputfield)
+      // console.log(this.$refs.inputfield)
       this.$refs.inputfield.classList.add('active')
       this.$refs.inputfield.focus()
     },
@@ -72,7 +72,7 @@ export default {
 .modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* -moz-osx-font-smoothing: grayscale; */
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
