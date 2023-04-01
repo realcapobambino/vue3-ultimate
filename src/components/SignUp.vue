@@ -11,10 +11,18 @@
             <option value="doctor">Doctor</option>
             <option value="nurse">Nurse</option>
         </select>
+
+        <div class="terms">
+            <input type="checkbox" required v-model="terms">
+            <label> Accept Terms and Conditions </label>
+        </div>
     </form>
-    <p>Email: {{ email }}</p>
-    <p>Passord: {{ password }}</p>
-    <p>Role: {{ role }}</p>
+    <div class="test-area">
+        <p>Email: {{ email }}</p>
+        <p>Password: {{ password }}</p>
+        <p>Role: {{ role }}</p>
+        <p>Terms: {{ terms }}</p>
+    </div>
 </template>
 
 <script>
@@ -23,13 +31,23 @@ export default {
         return {
             email: '',
             password: '',
-            role: ''
+            role: '',
+            terms: false,
+
         }
     }
 }
 </script>
 
 <style>
+.test-area {
+    background: white;
+    margin: 20px auto;
+    padding: 10px 5px;
+    max-width: 300px;
+    border-radius: 20px;
+}
+
 form {
     max-width: 420px;
     margin: 30px auto;
@@ -58,5 +76,13 @@ select {
     border: none;
     border-bottom: 1px solid #ddd;
     color: #555;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    width: 16px;
+    margin: 0 10px 0 0;
+    position: relative;
+    top: 2px;
 }
 </style>
