@@ -33,5 +33,8 @@ label {
 
 input {
     display: block;
+    padding: 10px 6px;
+    width: 100%;
+    box-sizing: border-box;
 }
 </style>
