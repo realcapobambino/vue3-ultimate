@@ -12,8 +12,12 @@
             <option value="designer">Designer</option>
         </select>
 
-        <!-- <label>Skills:</label>
-        <input type="text" v-model="tempSkill"> -->
+        <label>Skills:</label>
+        <!-- keyboard event. modified by alt key -->
+        <input type="text" v-model="tempSkill" @keyup.alt="addSkill">
+        <div v-for="skill in skills" :key="skill" class="pill">
+            <p>{{ skill }}</p>
+        </div>
 
 
         <!-- Checkbox - Boolean  -->
@@ -22,7 +26,7 @@
             <label> Accept Terms and Conditions </label>
         </div>
         <!-- Checkbox - Array -->
-        <div>
+        <!-- <div>
             <input type="checkbox" value="Luffy" v-model="names">
             <label>Luffy</label>
         </div>
@@ -33,14 +37,14 @@
         <div>
             <input type="checkbox" value="Sanji" v-model="names">
             <label>Sanji</label>
-        </div>
+        </div> -->
     </form>
     <div class="test-area">
         <p>Email: {{ email }}</p>
         <p>Password: {{ password }}</p>
         <p>Role: {{ role }}</p>
         <p>Terms: {{ terms }}</p>
-        <p>Checked: {{ names }}</p>
+        <!-- <p>Checked: {{ names }}</p> -->
     </div>
 </template>
 
@@ -52,9 +56,21 @@ export default {
             password: '',
             role: '',
             terms: false,
-            names: []
-            // tempSkill: '',
-            // skills: []
+            // names: []
+            tempSkill: '',
+            skills: []
+        }
+    },
+    methods: {
+        addSkill(e) {
+            if (e.key === ',' && this.tempSkill) {
+                // check for duplicates added to temp
+                if (!this.skills.includes(this.tempSkill)) {
+                    this.skills.push(this.tempSkill)
+                }
+
+                this.tempSkill = ''
+            }
         }
     }
 }
