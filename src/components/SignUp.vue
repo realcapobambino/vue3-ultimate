@@ -5,6 +5,9 @@
 
         <label>Password:</label>
         <input type="password" required v-model="password">
+        <div v-if="passwordError" class="error">
+            {{ passwordError }}
+        </div>
 
         <label>Role:</label>
         <select v-model="role">
@@ -65,7 +68,8 @@ export default {
             terms: false,
             // names: []
             tempSkill: '',
-            skills: ['html', 'css']
+            skills: [],
+            passwordError: ''
         }
     },
     methods: {
@@ -89,6 +93,19 @@ export default {
         handleSubmit() {
 
             // console.log('form submited')
+
+            //validate password
+            this.passwordError = this.password.length > 5 ?
+                '' : 'Password must be long'
+
+            if (!this.passwordError) {
+                console.log('email: ', this.email)
+                console.log('password: ', this.password)
+                console.log('role: ', this.role)
+                console.log('skills: ', this.skills)
+                console.log('terms accepted: ', this.terms)
+            }
+
         }
     }
 }
@@ -165,5 +182,12 @@ button {
 
 .submit {
     text-align: center;
+}
+
+.error {
+    color: #ff0062;
+    margin-top: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
 }
 </style>
