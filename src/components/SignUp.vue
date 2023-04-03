@@ -8,16 +8,31 @@
 
         <label>Role:</label>
         <select v-model="role">
-            <option value="doctor">Doctor</option>
-            <option value="nurse">Nurse</option>
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
         </select>
 
+        <!-- <label>Skills:</label>
+        <input type="text" v-model="tempSkill"> -->
+
+
+        <!-- Checkbox - Boolean  -->
         <div class="terms">
             <input type="checkbox" required v-model="terms">
             <label> Accept Terms and Conditions </label>
         </div>
+        <!-- Checkbox - Array -->
         <div>
-
+            <input type="checkbox" value="Luffy" v-model="names">
+            <label>Luffy</label>
+        </div>
+        <div>
+            <input type="checkbox" value="Zoro" v-model="names">
+            <label>Zoro</label>
+        </div>
+        <div>
+            <input type="checkbox" value="Sanji" v-model="names">
+            <label>Sanji</label>
         </div>
     </form>
     <div class="test-area">
@@ -25,6 +40,7 @@
         <p>Password: {{ password }}</p>
         <p>Role: {{ role }}</p>
         <p>Terms: {{ terms }}</p>
+        <p>Checked: {{ names }}</p>
     </div>
 </template>
 
@@ -36,7 +52,9 @@ export default {
             password: '',
             role: '',
             terms: false,
-
+            names: []
+            // tempSkill: '',
+            // skills: []
         }
     }
 }
