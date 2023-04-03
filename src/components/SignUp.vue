@@ -15,8 +15,8 @@
         <label>Skills:</label>
         <!-- keyboard event. modified by alt key -->
         <input type="text" v-model="tempSkill" @keyup.alt="addSkill">
-        <div v-for="skill in skills" :key="skill" class="pill" @click="removeTempSkill">
-            <p>{{ skill }}</p>
+        <div v-for="skill in skills" :key="skill" class="pill">
+            <p @click="removeSkill(skill)">{{ skill }}</p>
         </div>
 
 
@@ -72,8 +72,12 @@ export default {
                 this.tempSkill = ''
             }
         },
-        removeTempSkill() {
-            console.log('clicked:', this.tempSkill)
+        removeSkill(skill) {
+            // test for click
+            // console.log('clicked:', skill)
+            this.skills = this.skills.filter((item) => {
+                return skill !== item
+            })
         }
     }
 }
