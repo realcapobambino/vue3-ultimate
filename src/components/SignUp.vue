@@ -16,6 +16,9 @@
             <input type="checkbox" required v-model="terms">
             <label> Accept Terms and Conditions </label>
         </div>
+        <div>
+
+        </div>
     </form>
     <div class="test-area">
         <p>Email: {{ email }}</p>
