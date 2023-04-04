@@ -2,7 +2,8 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <!-- databind the route name for simplicity -->
-    <router-link :to="{ name: 'about' }">About</router-link>
+    <router-link :to="{ name: 'about' }">About</router-link> |
+    <router-link :to="{ name: 'jobs' }">Jobs</router-link>
   </nav>
   <router-view />
 </template>
@@ -23,6 +24,7 @@ nav {
 nav a {
   font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
 }
 
 nav a.router-link-exact-active {
