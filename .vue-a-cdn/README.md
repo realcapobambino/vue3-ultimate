@@ -1,3 +1,3 @@
 # vue3-ultimate
 
-Vue Workings
+Vue CDN
