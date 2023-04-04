@@ -1,9 +1,10 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <!-- databind the route name for simplicity -->
+    <router-link :to="{ name: 'about' }">About</router-link>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>
@@ -25,6 +26,10 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: white;
+  background: blueviolet;
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
 }
 </style>
