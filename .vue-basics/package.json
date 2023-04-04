@@ -1,8 +1,9 @@
 {
-	"name": "vue3-ultimate",
+	"name": "ultimate-basics",
 	"version": "0.1.0",
 	"private": true,
 	"author": "Charles Wahome",
+	"license": "MIT",
 	"scripts": {
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build"
