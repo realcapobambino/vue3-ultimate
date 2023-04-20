@@ -15,18 +15,16 @@
 export default {
   methods: {
     redirect() {
-      this.$router.push({ name: 'Home' })
+      this.$router.push({ name: "Home" });
     },
     back() {
-      this.$router.go(-1)
+      this.$router.go(-1);
     },
     forward() {
-      this.$router.go(1)
-    }
-  }
-
-}
-
+      this.$router.go(1);
+    },
+  },
+};
 </script>
 
 <style>
@@ -62,5 +60,6 @@ button {
   margin: 0 10px;
   border: none;
   border-radius: 4px;
+  box-shadow: saddlebrown;
 }
 </style>
