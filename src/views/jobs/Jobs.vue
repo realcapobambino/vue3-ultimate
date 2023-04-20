@@ -14,6 +14,14 @@ export default {
       jobs: [],
     };
   },
+  // data is fetched on the mounted life cycle hook. - when the component is mounted on the DOM
+  mounted() {
+    // fetch API - promises - async API
+    fetch("http://localhost:3000/jobs")
+      .then((res) => res.json())
+      .then((data) => (this.jobs = data))
+      .catch((err) => console.log(err.message));
+  },
 };
 </script>
 <style>
