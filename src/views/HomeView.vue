@@ -12,8 +12,13 @@
 export default {
   name: 'HomeView',
   setup() {
-
+    console.log('setup')
   },
-
+  created() {
+    console.log('created hook')
+  },
+  mounted() {
+    console.log('mounted hook')
+  },
 }
 </script>
