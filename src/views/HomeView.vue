@@ -1,32 +1,35 @@
 <template>
   <div class="home">
     Home
-    <p>My name is {{ name }}. I am {{ age }} years old</p>
+    <p ref="p">My name is {{ name }}. I am {{ age }} years old</p>
     <button @click="handleClick">Click Me</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import { ref } from 'vue'
+
 
 
 export default {
   name: 'HomeView',
   setup() {
-    console.log('setup')
+
+    const p = ref(null)
 
     let name = 'Karen'
     let age = 26
 
 
     const handleClick = () => {
-      console.log('clicked')
+      console.log(p, p.value)
     }
 
     return {
       name,
       age,
-      handleClick
+      handleClick,
+      p
     }
 
   },
