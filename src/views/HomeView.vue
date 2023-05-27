@@ -23,6 +23,8 @@ export default {
 
     const handleClick = () => {
       console.log(p, p.value)
+      p.value.classList.add('test')
+      p.value.textContent = 'Hello World'
     }
 
     return {
