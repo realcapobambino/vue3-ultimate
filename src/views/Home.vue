@@ -27,7 +27,7 @@
 </template>
 
 <script>
-	import { computed, ref, reactive } from 'vue'
+	import { computed, ref, reactive, watch } from 'vue'
 
 	export default {
 		name: 'Home',
@@ -64,6 +64,8 @@
 
 			const search = ref('')
 			const names = ref(['mario', 'yoshi', 'luigi', 'toad', 'bower', 'peach'])
+
+			watch(search, () => {})
 
 			const matcingNames = computed(() => {
 				return names.value.filter((name) => name.includes(search.value))
@@ -106,5 +108,23 @@
 	.home2 {
 		background-color: aqua;
 		color: black;
+	}
+	.home3 {
+		background-color: fuchsia;
+		color: black;
+	}
+	button {
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+			sans-serif;
+		font-style: oblique;
+		color: black;
+		margin: 10px;
+		padding: 10px;
+		background-color: white;
+		border: none;
+		border-radius: 15px;
+	}
+	input {
+		padding: 10px;
 	}
 </style>
