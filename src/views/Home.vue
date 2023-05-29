@@ -1,23 +1,33 @@
 <template>
-	<div class="card home1">
-		<h1>Home</h1>
-		<p ref="p">My name is {{ name }}. I am {{ age }} years old</p>
-		<button @click="handleClick">Click Me</button>
-		<button @click="age++">Add 1</button>
-		<input type="text" v-model="name" />
-	</div>
-	<div class="card home2">
-		<h1>using refs</h1>
-		<p>{{ humanOne.name }} - {{ humanOne.age }}</p>
-		<button @click="updateHumanOne">Update Human One</button>
-		<h1>using reactive</h1>
-		<p>{{ humanTwo.name }} - {{ humanTwo.age }}</p>
-		<button @click="updateHumanTwo">Update Human Two</button>
+	<div>
+		<div class="card home1">
+			<h1>Home</h1>
+			<p ref="p">My name is {{ name }}. I am {{ age }} years old</p>
+			<button @click="handleClick">Click Me</button>
+			<button @click="age++">Add 1</button>
+			<input type="text" v-model="name" />
+		</div>
+		<div class="card home2">
+			<h1>using refs</h1>
+			<p>{{ humanOne.name }} - {{ humanOne.age }}</p>
+			<button @click="updateHumanOne">Update Human One</button>
+			<h1>using reactive</h1>
+			<p>{{ humanTwo.name }} - {{ humanTwo.age }}</p>
+			<button @click="updateHumanTwo">Update Human Two</button>
+		</div>
+		<div class="card home3">
+			<h1>computed properties</h1>
+			<input type="text" v-model="search" />
+			<p>search term - {{ search }}</p>
+			<div v-for="name in matcingNames" :key="name">
+				{{ name }}
+			</div>
+		</div>
 	</div>
 </template>
 
 <script>
-	import { ref, reactive } from 'vue'
+	import { computed, ref, reactive } from 'vue'
 
 	export default {
 		name: 'Home',
@@ -50,6 +60,14 @@
 			const updateHumanTwo = () => {
 				humanTwo.age = 28
 			}
+			// computed
+
+			const search = ref('')
+			const names = ref(['mario', 'yoshi', 'luigi', 'toad', 'bower', 'peach'])
+
+			const matcingNames = computed(() => {
+				return names.value.filter((name) => name.includes(search.value))
+			})
 
 			return {
 				name,
@@ -59,6 +77,9 @@
 				updateHumanOne,
 				humanTwo,
 				updateHumanTwo,
+				names,
+				search,
+				matcingNames,
 			}
 		},
 		// created() {
