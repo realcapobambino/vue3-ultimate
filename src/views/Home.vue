@@ -1,130 +1,34 @@
 <template>
-	<div>
-		<div class="card home1">
-			<h1>Home</h1>
-			<p ref="p">My name is {{ name }}. I am {{ age }} years old</p>
-			<button @click="handleClick">Click Me</button>
-			<button @click="age++">Add 1</button>
-			<input type="text" v-model="name" />
-		</div>
-		<div class="card home2">
-			<h1>using refs</h1>
-			<p>{{ humanOne.name }} - {{ humanOne.age }}</p>
-			<button @click="updateHumanOne">Update Human One</button>
-			<h1>using reactive</h1>
-			<p>{{ humanTwo.name }} - {{ humanTwo.age }}</p>
-			<button @click="updateHumanTwo">Update Human Two</button>
-		</div>
-		<div class="card home3">
-			<h1>computed properties</h1>
-			<input type="text" v-model="search" />
-			<p>search term - {{ search }}</p>
-			<div v-for="name in matcingNames" :key="name">
-				{{ name }}
-			</div>
-		</div>
+	<div class="home">
+		<h1>HOME</h1>
+		<PostList v-if="showPosts" :posts="posts" />
+		<button @click="showPosts = !showPosts">toggle posts</button>
+		<button @click="posts.pop()">Delete</button>
 	</div>
 </template>
 
 <script>
-	import { computed, ref, reactive, watch } from 'vue'
+	import { ref } from 'vue'
+	import PostList from '@/components/PostList.vue'
 
 	export default {
 		name: 'Home',
+		components: { PostList },
 		setup() {
-			// const p = ref(null)
+			const posts = ref([
+				{
+					title: 'welcome to the blog',
+					body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem commodi praesentium, tenetur voluptate voluptatem error porro officiis fugit repellat nam cumque perferendis quod unde, similique nihil deleniti saepe magnam? Odio?',
+					id: 1,
+				},
+				{ title: 'top tech tips', body: 'lorem ipsum ipsum', id: 2 },
+			])
 
-			const name = ref('karen')
-			const age = ref(30)
+			const showPosts = ref(true)
 
-			// let name = 'Karen'
-			// let age = 26
-
-			const handleClick = () => {
-				// console.log(p, p.value)
-				// p.value.classList.add('test')
-				// p.value.textContent = 'Hello World'
-				// name = 'kate'
-
-				name.value = 'kate'
-				age.value = 26
-			}
-
-			const humanOne = ref({ name: 'Atom', age: 25 })
-			const humanTwo = reactive({ name: 'Ele', age: 24 })
-
-			const updateHumanOne = () => {
-				humanOne.value.age = 30
-			}
-
-			const updateHumanTwo = () => {
-				humanTwo.age = 28
-			}
-			// computed
-
-			const search = ref('')
-			const names = ref(['mario', 'yoshi', 'luigi', 'toad', 'bower', 'peach'])
-
-			watch(search, () => {})
-
-			const matcingNames = computed(() => {
-				return names.value.filter((name) => name.includes(search.value))
-			})
-
-			return {
-				name,
-				age,
-				handleClick,
-				humanOne,
-				updateHumanOne,
-				humanTwo,
-				updateHumanTwo,
-				names,
-				search,
-				matcingNames,
-			}
+			return { posts, showPosts }
 		},
-		// created() {
-		//   console.log('created hook')
-		// },
-		// mounted() {
-		//   console.log('mounted hook')
-		// },
 	}
 </script>
 
-<style>
-	.card {
-		max-width: 75%;
-		padding: 10px;
-		margin: 25px auto;
-		margin-bottom: 20px;
-		border-radius: 30px;
-		color: white;
-	}
-	.home1 {
-		background-color: green;
-	}
-	.home2 {
-		background-color: aqua;
-		color: black;
-	}
-	.home3 {
-		background-color: fuchsia;
-		color: black;
-	}
-	button {
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-			sans-serif;
-		font-style: oblique;
-		color: black;
-		margin: 10px;
-		padding: 10px;
-		background-color: white;
-		border: none;
-		border-radius: 15px;
-	}
-	input {
-		padding: 10px;
-	}
-</style>
+<style scoped></style>
