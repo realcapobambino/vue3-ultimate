@@ -31,6 +31,9 @@
 </script>
 
 <style>
+	h1 {
+		color: white;
+	}
 	.error {
 		border-radius: 50px;
 		padding: 40px;

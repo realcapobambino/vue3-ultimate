@@ -22,4 +22,20 @@
 	}
 </script>
 
-<style scoped></style>
+<style scoped>
+	.post {
+		max-width: 75%;
+		margin: 0 auto;
+		margin-bottom: 15px;
+		color: white;
+		border: 1px solid;
+		border-color: purple;
+		border-radius: 5%;
+	}
+	div a {
+		font-weight: bold;
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		color: blue;
+		text-decoration: none;
+	}
+</style>

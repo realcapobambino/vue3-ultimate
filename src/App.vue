@@ -16,7 +16,7 @@
 	}
 
 	body {
-		background-color: grey;
+		background-color: black;
 	}
 	nav {
 		padding: 10px;
