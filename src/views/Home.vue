@@ -1,34 +1,42 @@
 <template>
 	<div class="home">
 		<h1>HOME</h1>
-		<PostList v-if="showPosts" :posts="posts" />
-		<button @click="showPosts = !showPosts">toggle posts</button>
-		<button @click="posts.pop()">Delete</button>
+		<div v-if="error" class="error">{{ error }}</div>
+		<div v-if="posts.length">
+			<PostList :posts="posts" />
+		</div>
+		<div v-else>Loading...</div>
+
+		<!-- <PostList v-if="showPosts" :posts="posts" /> -->
+		<!-- <button @click="showPosts = !showPosts">toggle posts</button> -->
+		<!-- <button @click="posts.pop()">Delete</button> -->
 	</div>
 </template>
 
 <script>
-	import { ref } from 'vue'
 	import PostList from '@/components/PostList.vue'
+	import getPosts from '@/composables/getPosts'
 
 	export default {
 		name: 'Home',
 		components: { PostList },
 		setup() {
-			const posts = ref([
-				{
-					title: 'welcome to the blog',
-					body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem commodi praesentium, tenetur voluptate voluptatem error porro officiis fugit repellat nam cumque perferendis quod unde, similique nihil deleniti saepe magnam? Odio?',
-					id: 1,
-				},
-				{ title: 'top tech tips', body: 'lorem ipsum ipsum', id: 2 },
-			])
+			const { posts, error, load } = getPosts()
 
-			const showPosts = ref(true)
+			load()
 
-			return { posts, showPosts }
+			return { posts, error }
 		},
 	}
 </script>
 
-<style scoped></style>
+<style>
+	.error {
+		border-radius: 50px;
+		padding: 40px;
+		background-color: rgb(138, 46, 46);
+		max-width: 1200px;
+		margin: 0 auto;
+		color: white;
+	}
+</style>

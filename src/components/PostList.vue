@@ -13,16 +13,15 @@
 		components: { SinglePost },
 		setup(props) {
 			// console.log(props.posts)
-
-			onMounted(() => {
-				console.log('mounted')
-			})
-			onUnmounted(() => {
-				console.log('unmounted')
-			})
-			onUpdated(() => {
-				console.log('updated')
-			})
+			// onMounted(() => {
+			// 	console.log('mounted')
+			// })
+			// onUnmounted(() => {
+			// 	console.log('unmounted')
+			// })
+			// onUpdated(() => {
+			// 	console.log('updated')
+			// })
 		},
 	}
 </script>
